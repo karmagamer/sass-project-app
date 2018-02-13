@@ -3,17 +3,9 @@
 one:
   name: MyString
   key: MyString
-<<<<<<< HEAD
   project_id: 
-=======
-  project: one
->>>>>>> ac88b1ce3a024e80a257d71624d22e1b8e57a03d
 
 two:
   name: MyString
   key: MyString
-<<<<<<< HEAD
   project_id: 
-=======
-  project: two
->>>>>>> ac88b1ce3a024e80a257d71624d22e1b8e57a03d

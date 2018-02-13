@@ -1,10 +1,6 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-<<<<<<< HEAD
 # This model initially had no columns defined.  If you add columns to the
-=======
-# This model initially had no columns defined. If you add columns to the
->>>>>>> ac88b1ce3a024e80a257d71624d22e1b8e57a03d
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
@@ -12,8 +8,4 @@ one: {}
 # column: value
 #
 two: {}
-<<<<<<< HEAD
 #  column: value
-=======
-# column: value
->>>>>>> ac88b1ce3a024e80a257d71624d22e1b8e57a03d

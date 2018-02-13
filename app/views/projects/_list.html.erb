@@ -15,17 +15,12 @@
     <tbody>
       <% @projects.each do |project| %>
         <tr>
-<<<<<<< HEAD
           <td><%= link_to project.title,
                 tenant_project_path(project, tenant_id: @tenant.id), class: 'main-link' %></td>
-=======
-          <td><%= link_to project.title, tenant_project_path(project, tenant_id: @tenant.id), class: 'main-link' %></td>
->>>>>>> ac88b1ce3a024e80a257d71624d22e1b8e57a03d
           <td><%= project.details %></td>
           <td><%= project.expected_completion_date %></td>
           <td>
             <%= link_to t('.edit', :default => t("helpers.links.edit")),
-<<<<<<< HEAD
                 edit_tenant_project_path(project, tenant_id: @tenant.id), :class => 'btn btn-default btn-xs' %>
             <%= link_to 'Edit Users', users_tenant_project_path(project, tenant_id: @tenant.id),
                         :class => 'btn btn-default btn-xs' %>
@@ -34,13 +29,6 @@
                         :method => :delete,
                         :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", 
                             :default => 'Are you sure?')) },
-=======
-                        edit_tenant_project_path(project, tenant_id: @tenant.id), :class => 'btn btn-default btn-xs' %>
-            <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                        tenant_project_path(project, tenant_id: @tenant.id),
-                        :method => :delete,
-                        :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
->>>>>>> ac88b1ce3a024e80a257d71624d22e1b8e57a03d
                         :class => 'btn btn-xs btn-danger' %>
           </td>
         </tr>
@@ -48,17 +36,10 @@
     </tbody>
   </table>
 <% else %>
-<<<<<<< HEAD
   <p class="lead">You don't have any projects</p>
 <% end %>
 
 <% if (@tenant.can_create_projects?) %>
   <%= link_to 'New Project', new_tenant_project_path(tenant_id: @tenant.id),
-=======
-<p class='lead'> Buddy!! You got no projects </p>
-<% end %>
-<% if (@tenant.can_create_projects?) %>
-<%= link_to 'New Project', new_tenant_project_path(tenant_id: @tenant.id),
->>>>>>> ac88b1ce3a024e80a257d71624d22e1b8e57a03d
             :class => 'btn btn-primary' %>
 <% end %>

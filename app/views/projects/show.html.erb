@@ -1,11 +1,7 @@
 <%- model_class = Project -%>
 <div class="page-header">
   <h3><%= @project.title %></h3>
-<<<<<<< HEAD
   <h3><small>Organization - <%= tenant_name @project.tenant_id %></small></h3>
-=======
-  <h3><small> Organization - <%= tenant_name @project.tenant_id %></small></h3>
->>>>>>> ac88b1ce3a024e80a257d71624d22e1b8e57a03d
 </div>
 
 <dl class="dl-horizontal">
@@ -18,7 +14,6 @@
   <dt><strong><%= model_class.human_attribute_name(:tenant_id) %>:</strong></dt>
   <dd><%= @project.tenant_id %></dd>
 </dl>
-<<<<<<< HEAD
 <h3>Artifacts</h3>
 <%= render 'artifacts/list', artifacts: @project.artifacts %>
 <br />
@@ -35,17 +30,4 @@
               :method => 'delete',
               :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", 
               :default => 'Are you sure?')) },
-=======
-<h3> Artifacts </h3>
-<%= render 'artifacts/list' , artifacts: @project.artifacts %>
-<br />
-<br />
-<%= link_to 'Back to Organization Home', root_path, :class => 'btn btn-default'  %>
-<%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_tenant_project_path(project: @project, tenant: @project.tenant_id), :class => 'btn btn-default' %>
-<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-              tenant_project_path(@project, @project.tenant_id),
-              :method => 'delete',
-              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
->>>>>>> ac88b1ce3a024e80a257d71624d22e1b8e57a03d
               :class => 'btn btn-danger' %>
