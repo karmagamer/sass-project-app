@@ -1,49 +1,48 @@
 require 'test_helper'
 
-class ProjectsControllerTest < ActionController::TestCase
+class ProjectsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @project = projects(:one)
   end
 
   test "should get index" do
-    get :index
+    get projects_url
     assert_response :success
-    assert_not_nil assigns(:projects)
   end
 
   test "should get new" do
-    get :new
+    get new_project_url
     assert_response :success
   end
 
   test "should create project" do
     assert_difference('Project.count') do
-      post :create, project: { details: @project.details, expected_completion_date: @project.expected_completion_date, tenant_id: @project.tenant_id, title: @project.title }
+      post projects_url, params: { project: { details: @project.details, expected_completion_date: @project.expected_completion_date, tenant_id: @project.tenant_id, title: @project.title } }
     end
 
-    assert_redirected_to project_path(assigns(:project))
+    assert_redirected_to project_url(Project.last)
   end
 
   test "should show project" do
-    get :show, id: @project
+    get project_url(@project)
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, id: @project
+    get edit_project_url(@project)
     assert_response :success
   end
 
   test "should update project" do
-    patch :update, id: @project, project: { details: @project.details, expected_completion_date: @project.expected_completion_date, tenant_id: @project.tenant_id, title: @project.title }
-    assert_redirected_to project_path(assigns(:project))
+    patch project_url(@project), params: { project: { details: @project.details, expected_completion_date: @project.expected_completion_date, tenant_id: @project.tenant_id, title: @project.title } }
+    assert_redirected_to project_url(@project)
   end
 
   test "should destroy project" do
     assert_difference('Project.count', -1) do
-      delete :destroy, id: @project
+      delete project_url(@project)
     end
 
-    assert_redirected_to projects_path
+    assert_redirected_to projects_url
   end
 end

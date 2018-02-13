@@ -1,15 +1,12 @@
-class Tenant < ActiveRecord::Base
-  
-  acts_as_universal_and_determines_tenant
+class Tenant < ApplicationRecord
+
+   acts_as_universal_and_determines_tenant
   has_many :members, dependent: :destroy
   has_many :projects, dependent: :destroy
-  has_one :payment
-  accepts_nested_attributes_for :payment
-  
+
   def can_create_projects?
-    (plan == 'free' && projects.count < 1) || (plan == 'premium')  
+    (plan == 'free' && projects.count < 1) || (plan =='premium')
   end
-  
   validates_uniqueness_of :name
   validates_presence_of :name
     def self.create_new_tenant(tenant_params, user_params, coupon_params)
@@ -18,9 +15,9 @@ class Tenant < ActiveRecord::Base
 
       if new_signups_not_permitted?(coupon_params)
 
-        raise ::Milia::Control::MaxTenantExceeded, "Sorry, new accounts not permitted at this time" 
+        raise ::Milia::Control::MaxTenantExceeded, "Sorry, new accounts not permitted at this time"
 
-      else 
+      else
         tenant.save    # create the tenant
       end
       return tenant
@@ -52,5 +49,5 @@ class Tenant < ActiveRecord::Base
       #
     end
 
-   
+
 end

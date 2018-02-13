@@ -1,49 +1,48 @@
 require 'test_helper'
 
-class ArtifactsControllerTest < ActionController::TestCase
+class ArtifactsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @artifact = artifacts(:one)
   end
 
   test "should get index" do
-    get :index
+    get artifacts_url
     assert_response :success
-    assert_not_nil assigns(:artifacts)
   end
 
   test "should get new" do
-    get :new
+    get new_artifact_url
     assert_response :success
   end
 
   test "should create artifact" do
     assert_difference('Artifact.count') do
-      post :create, artifact: { key: @artifact.key, name: @artifact.name, project_id: @artifact.project_id }
+      post artifacts_url, params: { artifact: { key: @artifact.key, name: @artifact.name, project_id: @artifact.project_id } }
     end
 
-    assert_redirected_to artifact_path(assigns(:artifact))
+    assert_redirected_to artifact_url(Artifact.last)
   end
 
   test "should show artifact" do
-    get :show, id: @artifact
+    get artifact_url(@artifact)
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, id: @artifact
+    get edit_artifact_url(@artifact)
     assert_response :success
   end
 
   test "should update artifact" do
-    patch :update, id: @artifact, artifact: { key: @artifact.key, name: @artifact.name, project_id: @artifact.project_id }
-    assert_redirected_to artifact_path(assigns(:artifact))
+    patch artifact_url(@artifact), params: { artifact: { key: @artifact.key, name: @artifact.name, project_id: @artifact.project_id } }
+    assert_redirected_to artifact_url(@artifact)
   end
 
   test "should destroy artifact" do
     assert_difference('Artifact.count', -1) do
-      delete :destroy, id: @artifact
+      delete artifact_url(@artifact)
     end
 
-    assert_redirected_to artifacts_path
+    assert_redirected_to artifacts_url
   end
 end
