@@ -1,13 +1,23 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+<<<<<<< HEAD
   tenant_id: 
   user_id: 
+=======
+  tenant: one
+  user: one
+>>>>>>> ac88b1ce3a024e80a257d71624d22e1b8e57a03d
   first_name: MyString
   last_name: MyString
 
 two:
+<<<<<<< HEAD
   tenant_id: 
   user_id: 
+=======
+  tenant: two
+  user: two
+>>>>>>> ac88b1ce3a024e80a257d71624d22e1b8e57a03d
   first_name: MyString
   last_name: MyString

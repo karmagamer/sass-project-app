@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 class Member < ActiveRecord::Base
+=======
+class Member < ApplicationRecord
+>>>>>>> ac88b1ce3a024e80a257d71624d22e1b8e57a03d
    
   belongs_to :user
   acts_as_tenant

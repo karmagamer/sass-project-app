@@ -29,8 +29,12 @@ class ArtifactsController < ApplicationController
 
     respond_to do |format|
       if @artifact.save
+<<<<<<< HEAD
         format.html { redirect_to tenant_project_url(tenant_id: Tenant.current_tenant_id, 
                 id: @artifact.project_id), notice: 'Artifact was successfully created.' }
+=======
+        format.html { redirect_to tenant_project_url(tenant_id: Tenant.current_tenant_id, id: @artifact.project_id), notice: 'Artifact was successfully created.' }
+>>>>>>> ac88b1ce3a024e80a257d71624d22e1b8e57a03d
         format.json { render :show, status: :created, location: @artifact }
       else
         format.html { render :new }

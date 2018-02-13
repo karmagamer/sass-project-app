@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 require File.expand_path('../boot', __FILE__)
+=======
+require_relative 'boot'
+>>>>>>> ac88b1ce3a024e80a257d71624d22e1b8e57a03d
 
 require 'rails/all'
 
@@ -6,9 +10,15 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+<<<<<<< HEAD
 module SaasProjectApp
   class Application < Rails::Application
      
+=======
+module SassProjectApp
+  class Application < Rails::Application
+
+>>>>>>> ac88b1ce3a024e80a257d71624d22e1b8e57a03d
     # uncomment to ensure a common layout for devise forms
     #   config.to_prepare do   # Devise
     #     Devise::SessionsController.layout "sign"
@@ -17,6 +27,7 @@ module SaasProjectApp
     #     Devise::PasswordsController.layout "sign"
     #   end   # Devise
 
+<<<<<<< HEAD
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
@@ -31,5 +42,13 @@ module SaasProjectApp
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+=======
+    # Initialize configuration defaults for originally generated Rails version.
+    # config.load_defaults 5.1
+
+    # Settings in config/environments/* take precedence over those specified here.
+    # Application configuration should go into files in config/initializers
+    # -- all .rb files in that directory are automatically loaded.
+>>>>>>> ac88b1ce3a024e80a257d71624d22e1b8e57a03d
   end
 end

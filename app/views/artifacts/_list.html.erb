@@ -13,7 +13,16 @@
       <tr>
         <td><%= link_to artifact.name, artifact_path(artifact), class: 'main-link' %></td>
         <td><%= s3_link Tenant.current_tenant_id, artifact.key %></td>
+<<<<<<< HEAD
         <td>
+=======
+        <td><%= artifact.project_id %></td>
+        <td><%=l artifact.created_at %></td>
+        <td>
+          <%= link_to t('.show', :default => t("helpers.links.show")),
+                      artifact_path(artifact), :class => 'btn btn-default btn-xs' %>
+
+>>>>>>> ac88b1ce3a024e80a257d71624d22e1b8e57a03d
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
                       artifact_path(artifact),
                       :method => :delete,
@@ -25,5 +34,9 @@
   </tbody>
 </table>
 
+<<<<<<< HEAD
 <%= link_to 'New Artifact', new_artifact_path(project_id: @project.id),
             :class => 'btn btn-primary' %>
+=======
+<%= link_to 'New Artifact', new_artifact_path(project_id: @project.id), :class => 'btn btn-primary' %>
+>>>>>>> ac88b1ce3a024e80a257d71624d22e1b8e57a03d

@@ -1,18 +1,35 @@
 <%= bootstrap_devise_error_messages! %>
+<<<<<<< HEAD
 <div class="panel panel-default">
   <div class="panel-heading">
     <h4><%= t('.resend_confirmation_instructions', :default => 'Resend confirmation instructions') %></h4>
   </div>
   <div class="panel-body">
     <%= form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => { :method => :post, role: "form" }) do |f| %>
+=======
+<div class="panel panel-default devise-bs">
+  <div class="panel-heading">
+    <h4><%= t('.resend_confirmation_instructions', default: 'Resend confirmation instructions') %></h4>
+  </div>
+  <div class="panel-body">
+    <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post, role: 'form' }) do |f| %>
+>>>>>>> ac88b1ce3a024e80a257d71624d22e1b8e57a03d
       <div class="form-group">
         <%= f.label :email %>
         <%= f.email_field :email, autofocus: true, class: "form-control"  %>
       </div>
 
+<<<<<<< HEAD
       <%= f.submit t('.resend_confirmation_instructions', :default => 'Resend confirmation instructions'), class: "btn btn-primary" %>
+=======
+      <%= f.submit t('.resend_confirmation_instructions', default: 'Resend confirmation instructions'), class: 'btn btn-primary' %>
+>>>>>>> ac88b1ce3a024e80a257d71624d22e1b8e57a03d
     <% end %>
   </div>
 </div>
 
+<<<<<<< HEAD
 <%= render "devise/shared/links" %>
+=======
+<%= render 'devise/shared/links' %>
+>>>>>>> ac88b1ce3a024e80a257d71624d22e1b8e57a03d
