@@ -31,10 +31,14 @@ module ApplicationHelper
   
   def tenant_name(tenant_id)
     Tenant.find(tenant_id).name
+<<<<<<< HEAD
   end
   
   def s3_link(tenant_id, artifact_key)
     link_to artifact_key, "#{artifact_key}", class: "main-link", target: 'new'
+=======
+
+>>>>>>> parent of ac88b1c... something
   end
   
   def class_name_for_tenant_form(tenant)

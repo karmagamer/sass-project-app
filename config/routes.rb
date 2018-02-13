@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
 
+<<<<<<< HEAD
   resources :user_projects
   resources :artifacts
+=======
+>>>>>>> parent of ac88b1c... something
   resources :tenants do
     resources :projects do
       get 'users', on: :member 

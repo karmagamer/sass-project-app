@@ -7,8 +7,14 @@ gem 'rails', '4.2.3'
 gem 'pg'
 gem 'devise'
 gem 'milia'
+<<<<<<< HEAD
 gem 'aws-sdk'
 gem 'stripe'
+=======
+gem 'rake'
+# Use Puma as the app server
+gem 'puma', '~> 3.7'
+>>>>>>> parent of ac88b1c... something
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets

@@ -1,9 +1,12 @@
 class Project < ActiveRecord::Base
   belongs_to :tenant
   validates_uniqueness_of :title
+<<<<<<< HEAD
   has_many :artifacts, dependent: :destroy
   has_many :user_projects
   has_many :users, through: :user_projects
+=======
+>>>>>>> parent of ac88b1c... something
   validate :free_plan_can_only_have_one_project
   
   def free_plan_can_only_have_one_project

@@ -11,11 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20151117032915) do
+=======
+ActiveRecord::Schema.define(version: 20180213103402) do
+>>>>>>> parent of ac88b1c... something
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+<<<<<<< HEAD
   create_table "artifacts", force: :cascade do |t|
     t.string   "name"
     t.string   "key"
@@ -26,6 +31,8 @@ ActiveRecord::Schema.define(version: 20151117032915) do
 
   add_index "artifacts", ["project_id"], name: "index_artifacts_on_project_id", using: :btree
 
+=======
+>>>>>>> parent of ac88b1c... something
   create_table "members", force: :cascade do |t|
     t.integer  "tenant_id"
     t.integer  "user_id"
@@ -119,11 +126,14 @@ ActiveRecord::Schema.define(version: 20151117032915) do
     t.boolean  "is_admin",                     default: false
   end
 
+<<<<<<< HEAD
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "artifacts", "projects"
+=======
+>>>>>>> parent of ac88b1c... something
   add_foreign_key "members", "tenants"
   add_foreign_key "members", "users"
   add_foreign_key "payments", "tenants"
